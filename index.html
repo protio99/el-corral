@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="bienvenida.css">
+    <title>Huevos el corral</title>
+  </head>
+  <body style="background-color: black;">
+    <section id="bienvenida">
+      <svg
+        width="300"
+        height="300"
+        viewBox="0 0 300 300"
+        xmlns="http://www.w3.org/2000/svg"
+        id="svg-sun"
+      >
+        <defs>
+          <!-- Aura difuminada -->
+          <radialGradient id="sunAura" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffecb3" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
+
+          <!-- Nuevo núcleo con borde naranja oscuro y centro blanco -->
+          <radialGradient id="sunCoreVivid" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" />
+            <stop offset="100%" stop-color="#ff9800" />
+          </radialGradient>
+
+          <!-- Círculos parpadeo -->
+          <radialGradient id="halo1" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff59d" />
+            <stop offset="100%" stop-color="#fffde7" />
+          </radialGradient>
+
+          <radialGradient id="halo2" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fff9c4" />
+            <stop offset="100%" stop-color="#ffffff" />
+          </radialGradient>
+        </defs>
+
+        <!-- Aura externa -->
+        <circle cx="150" cy="150" r="130" fill="url(#sunAura)" />
+
+        <!-- Círculo central más vívido -->
+        <circle
+          id="sun-core"
+          cx="150"
+          cy="150"
+          r="40"
+          fill="url(#sunCoreVivid)"
+        />
+
+        <!-- Primer círculo que rotará -->
+        <circle
+          id="sun-ring-1"
+          cx="150"
+          cy="150"
+          r="60"
+          fill="url(#halo1)"
+          opacity="0.6"
+        />
+
+        <!-- Segundo círculo más grande que rotará en sentido contrario -->
+        <circle
+          id="sun-ring-2"
+          cx="150"
+          cy="150"
+          r="85"
+          fill="url(#halo2)"
+          opacity="0.4"
+        />
+      </svg>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="./bienvenida.js"></script>
+  </body>
+</html>
