@@ -1,5 +1,46 @@
+body {
+    margin: 0;
+    overflow-x: hidden; /* Evita scroll horizontal no deseado */
+    font-family: sans-serif; /* Define una fuente base */
+}
+
 #bienvenida {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(to bottom, #b6d7eb, #5ebbf5);
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-end;
     align-items: center;
+    overflow: hidden;
+}
+
+/* .sky {
+    position: absolute;
+    top
+} */
+
+.sun {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    bottom: -200px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.sun circle {
+    r: 0;
+}
+
+.cloud {
+    position: absolute;
+    width: 150px;
+    opacity: 0.8;
+}
+
+.cloud-1 {
+    top: 10%;
+    left: 10%;
 }
