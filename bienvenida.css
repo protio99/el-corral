@@ -16,10 +16,16 @@ body {
     overflow: hidden;
 }
 
-/* .sky {
+.sky {
     position: absolute;
-    top
-} */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;;
+}
 
 .sun {
     position: absolute;
@@ -36,11 +42,37 @@ body {
 
 .cloud {
     position: absolute;
-    width: 150px;
-    opacity: 0.8;
+    /* opacity: 0; */
 }
 
-.cloud-1 {
-    top: 10%;
-    left: 10%;
+#cloud-svg-1 {
+    /* top: 10%; */
+    /* left: -20%; */
+    width: 350px;
+    transform: translateY(0%);
 }
+
+#cloud-svg-2 { /* Nube más pequeña */
+    width: 200px;
+    height: auto;
+    top: 43%;
+    /* right: -20%; Inicia fuera de la pantalla a la derecha */
+    transform: translateY(0%); /* Para la animación de entrada */
+}
+
+#cloud-svg-3 { /* Nube más pequeña */
+    width: 250px;
+    height: auto;
+    top: 20%;
+    /* right: -25%; Inicia fuera de la pantalla a la derecha */
+    transform: translateY(0%); /* Para la animación de entrada */
+}
+
+#cloud-svg-4 { /* Nube más pequeña */
+    width: 332px;
+    height: auto;
+    top: 28%;
+    /* right: -25%; Inicia fuera de la pantalla a la derecha */
+    transform: translateY(0%); /* Para la animación de entrada */
+}
+

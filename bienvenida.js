@@ -1,16 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
     console.log("GSAP is loaded:", gsap);
-const sunCore = document.getElementById("sun-core");
-const sunRing1 = document.getElementById("sun-ring-1");
-const sunRing2 = document.getElementById("sun-ring-2");
-const aura = document.getElementById("aura");
+    const sunCore = document.getElementById("sun-core");
+    const sunRing1 = document.getElementById("sun-ring-1");
+    const sunRing2 = document.getElementById("sun-ring-2");
+    const aura = document.getElementById("aura");
+    const cloud1 = document.getElementById('cloud-svg-1');
+    const cloud2 = document.getElementById('cloud-svg-2');
+    const cloud3 = document.getElementById('cloud-svg-3');
+    const cloud4 = document.getElementById('cloud-svg-4');
 
-const sunIntroTl = gsap.timeline({ paused:true, defaults: {duration: 0.6, ease: "power2.out"}});
+    const sunIntroTl = gsap.timeline({ paused: true, defaults: { duration: 0.6, ease: "power2.out" } });
 
-sunIntroTl.fromTo(sunCore, { r: 0, opacity: 0 }, { r: 60, opacity: 1})
-    .fromTo(sunRing1, { r: 0, opacity: 0 }, { r: 70, opacity: 0.3}, "-=0.3") 
-    .fromTo(sunRing2, { r: 0, opacity: 0 }, { r: 85, opacity: 0.1}, "-=0.3") 
-    .fromTo(aura, { r: 0, opacity: 0 }, { r: 150, opacity: 0.1}, "-=0.3");
+    sunIntroTl.fromTo(sunCore, { r: 0, opacity: 0 }, { r: 60, opacity: 1 })
+        .fromTo(sunRing1, { r: 0, opacity: 0 }, { r: 70, opacity: 0.3 }, "-=0.3")
+        .fromTo(sunRing2, { r: 0, opacity: 0 }, { r: 85, opacity: 0.1 }, "-=0.3")
+        .fromTo(aura, { r: 0, opacity: 0 }, { r: 150, opacity: 0.1 }, "-=0.3");
 
     sunIntroTl.then(() => { // .then() se ejecuta cuando la línea de tiempo ha completado su ejecución
         // Animación de parpadeo para el primer anillo
@@ -22,13 +26,13 @@ sunIntroTl.fromTo(sunCore, { r: 0, opacity: 0 }, { r: 60, opacity: 1})
             ease: "sine.inOut",
             repeat: -1,
             yoyo: true,
-            delay: 0.2 
+            delay: 0.2
         });
 
         // Animación de parpadeo para el segundo anillo
         gsap.to(sunRing2, {
             opacity: 0.2,
-            scale: 1.08, 
+            scale: 1.08,
             transformOrigin: "center center",
             duration: 1.8,
             ease: "sine.inOut",
@@ -58,5 +62,58 @@ sunIntroTl.fromTo(sunCore, { r: 0, opacity: 0 }, { r: 60, opacity: 1})
         });
     });
 
-sunIntroTl.play();
+    sunIntroTl.play();
+    
+    console.log("cloud1 ancho nube | inicio | fin: ", cloud1.clientWidth, (window.innerWidth - cloud1.clientWidth), (window.innerWidth + cloud1.clientWidth));
+    console.log("cloud3 ancho nube | inicio | fin: ", cloud3.clientWidth, (-cloud3.clientWidth), (window.innerWidth + cloud3.clientWidth));
+    console.log("window innerwidth: ", window.innerWidth);
+
+
+    gsap.fromTo(cloud1,
+        { x: -window.innerWidth + cloud1.clientWidth, opacity: 0 },
+        {
+            x: window.innerWidth + cloud1.clientWidth,
+            opacity: 1,
+            duration: 25,
+            ease: "none",
+            repeat: -1,
+            delay: 1
+        }
+    );
+
+    gsap.fromTo(cloud2,
+        { x: window.innerWidth + cloud2.clientWidth, opacity: 0 },
+        {
+            x: -window.innerWidth,
+            opacity: 1,
+            duration: 25,
+            ease: "none",
+            repeat: -1,
+            delay: 3
+        }
+    );
+
+    gsap.fromTo(cloud3,
+        { x: - window.innerWidth + cloud3.clientWidth, opacity: 0 },
+        {
+            x: window.innerWidth + cloud3.clientWidth,
+            opacity: 1,
+            duration: 35,
+            ease: "none",
+            repeat: -1,
+            delay: 2
+        }
+    );
+
+    gsap.fromTo(cloud4,
+        { x: window.innerWidth + cloud4.clientWidth, opacity: 0 },
+        {
+            x: -window.innerWidth,
+            opacity: 1,
+            duration: 35,
+            ease: "none",
+            repeat: -1,
+            delay: 2 
+        }
+    );
 })
