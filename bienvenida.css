@@ -46,33 +46,82 @@ body {
 }
 
 #cloud-svg-1 {
-    /* top: 10%; */
+    top: 5%;
     /* left: -20%; */
     width: 350px;
     transform: translateY(0%);
 }
 
-#cloud-svg-2 { /* Nube más pequeña */
+#cloud-svg-2 {
     width: 200px;
     height: auto;
     top: 43%;
-    /* right: -20%; Inicia fuera de la pantalla a la derecha */
-    transform: translateY(0%); /* Para la animación de entrada */
+    transform: translateY(0%);
 }
 
-#cloud-svg-3 { /* Nube más pequeña */
+#cloud-svg-3 {
     width: 250px;
     height: auto;
     top: 20%;
-    /* right: -25%; Inicia fuera de la pantalla a la derecha */
-    transform: translateY(0%); /* Para la animación de entrada */
+    transform: translateY(0%);
 }
 
-#cloud-svg-4 { /* Nube más pequeña */
+#cloud-svg-4 {
     width: 332px;
     height: auto;
     top: 28%;
-    /* right: -25%; Inicia fuera de la pantalla a la derecha */
-    transform: translateY(0%); /* Para la animación de entrada */
+    transform: translateY(0%);
 }
 
+.grass-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 60%; /* Ajusta esta altura para que las capas de pasto quepan bien */
+    overflow: hidden; /* Importante para que las capas no se vean antes de su animación */
+    display: flex; /* Usamos flex para apilar las capas desde abajo */
+    flex-direction: column-reverse; /* Esto hará que layer5 quede abajo y layer1 arriba visualmente */
+    justify-content: flex-start; /* Alinea los elementos en la parte inferior del contenedor */
+    align-items: center;
+}
+
+.grass {
+    position: absolute; /* Para poder controlar su posición individualmente */
+    width: 100%; /* Las capas de pasto ocuparán todo el ancho */
+    height: auto; /* Mantener la proporción */
+    object-fit: cover;
+    transform: translateY(100%); /* Inicia completamente fuera de la vista por debajo */
+    opacity: 0; /* Inicia invisible */
+    /* Cada capa tendrá su propio 'bottom' y 'z-index' */
+}
+
+.layer5 {
+    bottom: 0; /* Más cerca del borde inferior */
+    z-index: 5;
+    width: 110vw; /* Ligeramente más ancho para efecto parallax si lo añades más tarde */
+}
+
+.layer4 {
+    bottom: 5%; /* Un poco más arriba que la capa 5 */
+    z-index: 4;
+    width: 105vw;
+}
+
+.layer3 {
+    bottom: 10%; /* Y así sucesivamente */
+    z-index: 3;
+    width: 100vw;
+}
+
+.layer2 {
+    bottom: 15%;
+    z-index: 2;
+    width: 95vw;
+}
+
+.layer1 {
+    bottom: 20%; /* La más alta en el horizonte */
+    z-index: 1;
+    width: 90vw;
+}
