@@ -9,9 +9,6 @@ body {
     width: 100vw;
     height: 100vh;
     background: linear-gradient(to bottom, #b6d7eb, #5ebbf5);
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
     align-items: center;
     overflow: hidden;
 }
@@ -22,16 +19,11 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;;
 }
 
 #aura {
     position: absolute;
-    width: 100vw;
-    height: 100vh;
-    top: 15%;
+    top:3vw;
     left: 0;
     pointer-events: none; /* Para que no interfiera con los clics */
 }
@@ -51,12 +43,10 @@ body {
 
 .cloud {
     position: absolute;
-    /* opacity: 0; */
 }
 
 #cloud-svg-1 {
     top: 5%;
-    /* left: -20%; */
     width: 350px;
     transform: translateY(0%);
 }
@@ -101,34 +91,58 @@ body {
 }
 
 .layer5 {
-    bottom: clamp(-150px, -6vw, -10px);;
+    bottom: clamp(-150px, -9vw, -10px);;
     z-index: 5;
 }
 
 .layer4 {
-    /* bottom: -9vw; */
-    bottom: clamp(-200px, -13vw, 80px);
-
+    bottom: clamp(-230px, -13vw, 80px);
     z-index: 4;
 }
 
 .layer3 {
-    /* bottom: -10vw;  */
     bottom: clamp(-200px, -12vw, 80px);
-
     z-index: 3;
 }
 
 .layer2 {
-    /* bottom: -9vw; */
-    bottom: clamp(-180px, -12vw, 80px);
-
+    bottom: clamp(-200px, -12vw, 80px);
     z-index: 2;
 }
 
 .layer1 {
-    /* bottom: -9vw;  */
-    bottom: clamp(-180px, -12vw, 80px);
-
+    bottom: clamp(-200px, -14vw, 80px);
     z-index: 1;
+}
+
+.company-logo {
+    position: absolute;
+    top: 50%; /* Centrar verticalmente */
+    left: 50%; /* Centrar horizontalmente */
+    transform: translate(-50%, -50%) scale(0); /* Inicialmente en el centro, oculto y sin tamaño */
+    opacity: 0;  /*Inicialmente invisible */
+    z-index: 10; /* Asegurarse de que esté por encima de otros elementos como el pasto y el sol */
+    width: 200px; /* Tamaño base del logo, ajustable */
+    height: auto; /* Mantener la proporción */
+}
+
+.welcome-text {
+    position: absolute;
+    top: 65%; /* Ajusta la posición para que quede debajo del logo */
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: #4a3e2e; /* Un color cálido para el texto */
+    font-family: 'YourChosenFont', sans-serif; /* Usa tu fuente preferida */
+    opacity: 0; /* Inicialmente invisible */
+    z-index: 11;
+}
+
+.welcome-text h1 {
+    font-size: 2.5em; /* Tamaño del título, ajustable */
+    margin-bottom: 10px;
+}
+
+.welcome-text p {
+    font-size: 1.2em; /* Tamaño del subtítulo, ajustable */
 }

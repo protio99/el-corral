@@ -29,10 +29,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .fromTo(grassLayer3, { y: 100, opacity: 0 }, { y: 0, opacity: 1, ease: "power2.out" }, "start+=0.4")
         .fromTo(grassLayer2, { y: 100, opacity: 0 }, { y: 0, opacity: 1, ease: "power2.out" }, "start+=0.6")
         .fromTo(grassLayer1, { y: 100, opacity: 0 }, { y: 0, opacity: 1, ease: "power2.out" }, "start+=0.8")
-        .fromTo(sunCore, { r: 0, opacity: 0, y: 100 }, { y: 0, r: 85, opacity: 1  })
+        .fromTo(sunCore, { r: 0, opacity: 0, y: 100 }, { y: 0, r:85, opacity: 1  })
         .fromTo(sunRing1, { r: 0, opacity: 0 }, { r: 90, duration: 0.7, opacity: 0.3 }, "-=0.3")
         .fromTo(sunRing2, { r: 0, opacity: 0 }, { r: 98, duration: 0.8, opacity: 0.1 }, "-=0.3")
-        .fromTo(aura, { r: 0, opacity: 0 }, { r: 300, duration: 1, opacity: 1 });
+        .fromTo(aura, { r: 0, opacity: 0 }, { r: 300, duration: 4, opacity: 1 });
 
     mainAnimationTl.then(() => { // .then() se ejecuta cuando la línea de tiempo ha completado su ejecución
         // Animación de parpadeo para el primer anillo

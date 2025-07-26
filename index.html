@@ -11,17 +11,16 @@
 <body>
   <section id="bienvenida">
     <div class="sky">
-      
-        <svg id="aura"  viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <radialGradient id="sunAura" cx="50%" cy="50%" r="60%">
-              <stop offset="0%" stop-color="#e6b41e" stop-opacity="0.6" />
-              <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-            </radialGradient>
-          </defs>
-          <!-- Círculo con el aura -->
-          <circle id="sun-aura" cx="150" cy="150" r="180" fill="url(#sunAura)" />
-        </svg>
+      <svg id="aura"  viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <radialGradient id="sunAura" cx="50%" cy="50%" r="60%">
+            <stop offset="0%" stop-color="#e6b41e" stop-opacity="0.6" />
+            <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+        <!-- Círculo con el aura -->
+        <circle id="sun-aura" cx="150" cy="150" r="150" fill="url(#sunAura)" />
+      </svg>
       <img id="cloud-svg-1" src="assets/cloud1.svg" alt="Nube 1" class="cloud cloud-1">
       <img id="cloud-svg-2" src="assets/cloud2.svg" alt="Nube 1" class="cloud cloud-2">
       <img id="cloud-svg-3" src="assets/cloud3.svg" alt="Nube 1" class="cloud cloud-3">
@@ -36,7 +35,7 @@
           <!-- Nuevo núcleo con borde naranja oscuro y centro blanco -->
           <radialGradient id="sunCoreVivid" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stop-color="#ffffff" />
-            <stop offset="100%" stop-color="#ff9800" />
+            <stop offset="100%" stop-color="#f8a706a8" />
           </radialGradient>
           <!-- Círculos parpadeo -->
           <radialGradient id="halo1" cx="50%" cy="50%" r="50%">
@@ -66,6 +65,12 @@
       <img src="assets/grassLayer2.svg" id="grass-layer-2" class="grass layer2">
       <img src="assets/grassLayer1.svg" id="grass-layer-1" class="grass layer1">
     </div>
+    <img src="assets/chicken.svg" alt="Logo Huevos de Corral" id="company-logo" class="company-logo">
+
+        <div class="welcome-text">
+            <h1>Huevos de Corral</h1>
+            <p>De nuestras gallinas felices, a tu mesa.</p>
+        </div>
   </section>
 
   <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
